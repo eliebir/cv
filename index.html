@@ -46,34 +46,35 @@
         box-shadow:0 2px 8px rgba(0,0,0,0.5);
       }
 
-      main{
-        flex:1 0 auto;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        padding:1.25rem;
-        box-sizing:border-box;
+      main {
+        flex: 1 1 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.25rem;
+        box-sizing: border-box;
+        flex-direction: column; /* To stack content and footer better */
       }
 
       .content{
-        width:100%;
-        max-width:var(--page-width-px); /* keep "normal" page width */
-        text-align:center;
+        width: 100%;
+        max-width: var(--page-width-px);
+        text-align: center;
       }
 
       /* Ensure the iframe exactly matches A4 proportions displayed at chosen width,
          so the PDF is fully visible without an internal scrollbar. */
       .viewer{
-        width:100%;
-        max-width:var(--page-width-px);
-        /* compute height from width using A4 ratio (297 / 210) so no inner scroll */
-        height: calc(100% * 297 / 210);
-        border:0;
-        border-radius:8px;
-        background:var(--panel);
-        box-shadow:0 8px 30px rgba(0,0,0,0.6);
-        overflow:hidden;
-        display:block;
+        width: 100%;
+        max-width: var(--page-width-px);
+        /* Use exact pixel height matching A4 ratio from pixel width */
+        height: calc(794px * 297 / 210);
+        border: 0;
+        border-radius: 8px;
+        background: var(--panel);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+        overflow: hidden;
+        display: block;
       }
 
       p{ color:var(--muted); margin-top:.75rem; font-size:.95rem; }
